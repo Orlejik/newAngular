@@ -1,0 +1,42 @@
+.container{
+  width: 70%;
+  margin: 0 auto;
+  padding: 30px 50px;
+  border: 1px solid #e7e7e7;
+  text-align: center;
+  vertical-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: .5s;
+  -webkit-box-shadow: 0px 10px 50px -32px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 10px 50px -32px rgba(0,0,0,0.75);
+  box-shadow: 0px 10px 50px -32px rgba(0,0,0,0.75);
+
+}
+.inputCheckBox, .nameOfTask, .timeOfTask, .toremoveBtn{
+  width: 25%;
+}
+.checkBox{
+  text-align: left;
+}
+.itemDone{
+  text-decoration: line-through gray;
+  color: gray;
+  transition: .3s;
+}
+.inputs{
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: space-around;
+  padding: 15px 150px;
+
+}
+.tasks{
+  display: flex;
+  padding: 15px 10px;
+  justify-content: space-around;
+  border-bottom: 1px solid darkgray;
+}

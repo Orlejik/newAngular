@@ -1,0 +1,40 @@
+
+<div class="container container-fluid">
+  <div class="inputs">
+      <div class="form-outline">
+        <input type="text" id="taskInput" [(ngModel)]="task" class="form-control" name="taskName" #taskName/>
+        <label class="form-label" for="taskInput">name of task...</label>
+      </div>
+      <div class="form-outline">
+        <input type="text" id="timeInput"[(ngModel)]="time" (keyup.enter)="addItem(task, time)"  class="form-control" name="timeMinutes" #timeMinutes/>
+        <label class="form-label" for="timeInput">what time do you need?</label>
+      </div>
+      <div class="buttons">
+        <button type="button" class="btn btn-success" (click)="addItem(task, time)" >Add</button>
+      </div>
+  </div>
+  <h2>Tasks</h2>
+  <div *ngFor="let item of items; let i = index">
+    <div class="tasks">
+      <div class="inputCheckBox">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          id="checkboxNoLabel"
+          value=""
+          [(ngModel)]="item.done"
+          aria-label="..."
+        />
+      </div>
+      <div class="nameOfTask" [ngClass]="{'itemDone' : item.done}">{{item.task}}</div>
+      <div class="timeOfTask" [ngClass]="{'itemDone' : item.done}">{{item.time}} min.</div>
+      <div class="toremoveBtn">
+        <button type="button" class="btn btn-danger" (click)="removeItem(i)">Remove</button>
+      </div>
+    </div>
+  </div>
+  <div class="quantityOfTasks">
+    now you have {{items?.length}}
+  </div>
+  </div>
+
